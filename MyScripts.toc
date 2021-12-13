@@ -1,0 +1,7 @@
+## Interface: 90105
+## Title: My Scripts
+## Notes: My scripts
+## Author: Xie Q
+## Version: 0.1
+
+MyScripts.lua
