@@ -1,4 +1,4 @@
-
+local function MyConfigRaidProfile()
 	--记得把sortgroup设置成始终调用主配置。10人以上的话手动建立一个raid配置。
 
 	--团队界面配置
@@ -104,3 +104,4 @@ end)
 
 -- number on arena nameplate
 local U=UnitIsUnit hooksecurefunc("CompactUnitFrame_UpdateName",function(F)if IsActiveBattlefieldArena()and F.unit:find("nameplate")then for i=1,5 do if U(F.unit,"arena"..i)then F.name:SetText(i)F.name:SetTextColor(1,1,0)break end end end end)
+
