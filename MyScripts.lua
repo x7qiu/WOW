@@ -1,10 +1,11 @@
-local function MyConfigRaidProfile()
+
 	--记得把sortgroup设置成始终调用主配置。10人以上的话手动建立一个raid配置。
 
 	--团队界面配置
     SetCVar("useCompactPartyFrames",1) --使用团队风格的小队框体界面
     SetCVar("activeCUFProfile","主配置") --主配置
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "keepGroupsTogether", false) --保持小队相连
+	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "useClassColors", true) --显示预计治疗
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "displayHealPrediction", true) --显示预计治疗
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "displayPowerBar", true) --显示能量条
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "displayAggroHighlight", false) --高亮显示仇恨目标
@@ -73,6 +74,9 @@ f:SetScript("OnEvent",function(self,login,reload)
 
 	
 	LossOfControlFrame:SetScale(1.3)
+	LossOfControlFrame.RedLineTop:SetAlpha(0)
+	LossOfControlFrame.RedLineBottom:SetAlpha(0)
+	LossOfControlFrame.blackBg:SetAlpha(0)
 
 	MainMenuBarArtFrame.LeftEndCap:Hide()
 	MainMenuBarArtFrame.RightEndCap:Hide()
@@ -89,8 +93,14 @@ f:SetScript("OnEvent",function(self,login,reload)
 		MyConfigRaidProfile()
 	end
 	
+
+
+
+
+
 end)
+
+
 
 -- number on arena nameplate
 local U=UnitIsUnit hooksecurefunc("CompactUnitFrame_UpdateName",function(F)if IsActiveBattlefieldArena()and F.unit:find("nameplate")then for i=1,5 do if U(F.unit,"arena"..i)then F.name:SetText(i)F.name:SetTextColor(1,1,0)break end end end end)
-
