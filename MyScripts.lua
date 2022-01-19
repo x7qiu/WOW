@@ -30,7 +30,7 @@ local function MyConfigRaidProfile()
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "autoActivatePvE", true)
 
     --团队框体位置
-    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 540, "BOTTOM", 200, "LEFT", 800)
+    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 540, "BOTTOM", 200, "LEFT", 950)
 	
 	--团队框体大小
 	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 130)
@@ -46,18 +46,18 @@ f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:SetScript("OnEvent",function(self,login,reload)
 	-- 玩家
 	PlayerFrame:ClearAllPoints()
-	PlayerFrame:SetPoint("CENTER", UIParent, "CENTER", -300, -200)
+	PlayerFrame:SetPoint("CENTER", UIParent, "CENTER", -150, -200)
 	PlayerFrame:SetScale(1.0)
 	PlayerFrame:SetUserPlaced(true)
 	
 	-- 自己施法条
-	CastingBarFrame:ClearAllPoints()
-	CastingBarFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 20, -20)
+	-- CastingBarFrame:ClearAllPoints()
+	-- CastingBarFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 20, -20)
 
 
 	-- 目标
 	TargetFrame:ClearAllPoints()
-	TargetFrame:SetPoint("CENTER", UIParent, "CENTER", -75, -200)
+	TargetFrame:SetPoint("CENTER", UIParent, "CENTER", 75, -200)
 	TargetFrame:SetScale(1.0)
 	TargetFrame:SetUserPlaced(true)
 
@@ -67,7 +67,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 
 	-- 焦点
 	FocusFrame:ClearAllPoints()
-	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -450, 250)
+	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -300, 250)
 	FocusFrame:SetScale(1.0)
 	FocusFrame:SetUserPlaced(true)
 	FocusFrameSpellBar:SetScale(1.8)
@@ -104,4 +104,3 @@ end)
 
 -- number on arena nameplate
 local U=UnitIsUnit hooksecurefunc("CompactUnitFrame_UpdateName",function(F)if IsActiveBattlefieldArena()and F.unit:find("nameplate")then for i=1,5 do if U(F.unit,"arena"..i)then F.name:SetText(i)F.name:SetTextColor(1,1,0)break end end end end)
-
