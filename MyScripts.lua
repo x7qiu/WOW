@@ -2,6 +2,9 @@ local function MyConfigRaidProfile()
 	--记得把sortgroup设置成始终调用主配置。10人以上的话手动建立一个raid配置。
 
 	--团队界面配置
+	--记得把sortgroup设置成始终调用主配置。10人以上的话手动建立一个raid配置。
+
+	--团队界面配置
     SetCVar("useCompactPartyFrames",1) --使用团队风格的小队框体界面
     SetCVar("activeCUFProfile","主配置") --主配置
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "keepGroupsTogether", false) --保持小队相连
@@ -30,11 +33,11 @@ local function MyConfigRaidProfile()
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "autoActivatePvE", true)
 
     --团队框体位置
-    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 540, "BOTTOM", 200, "LEFT", 950)
+    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 510, "BOTTOM", 50, "LEFT", 930)
 	
 	--团队框体大小
-	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 130)
-	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameHeight", 65)
+	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 145)
+	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameHeight", 75)
 
     --刷新设置
     CompactUnitFrameProfiles_SaveChanges(CompactUnitFrameProfiles)
@@ -67,7 +70,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 
 	-- 焦点
 	FocusFrame:ClearAllPoints()
-	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -300, 250)
+	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -340, 300)
 	FocusFrame:SetScale(1.0)
 	FocusFrame:SetUserPlaced(true)
 	FocusFrameSpellBar:SetScale(1.8)
