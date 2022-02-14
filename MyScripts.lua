@@ -2,9 +2,6 @@ local function MyConfigRaidProfile()
 	--记得把sortgroup设置成始终调用主配置。10人以上的话手动建立一个raid配置。
 
 	--团队界面配置
-	--记得把sortgroup设置成始终调用主配置。10人以上的话手动建立一个raid配置。
-
-	--团队界面配置
     SetCVar("useCompactPartyFrames",1) --使用团队风格的小队框体界面
     SetCVar("activeCUFProfile","主配置") --主配置
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "keepGroupsTogether", false) --保持小队相连
@@ -53,6 +50,10 @@ f:SetScript("OnEvent",function(self,login,reload)
 	PlayerFrame:SetScale(1.0)
 	PlayerFrame:SetUserPlaced(true)
 	
+	--隐藏头像受到伤害和治疗数字
+	local p=PlayerHitIndicator; p.Show=p.Hide; p:Hide()
+	local p=PetHitIndicator; p.Show=p.Hide; p:Hide()
+	
 	-- 自己施法条
 	-- CastingBarFrame:ClearAllPoints()
 	-- CastingBarFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 20, -20)
@@ -91,6 +92,15 @@ f:SetScript("OnEvent",function(self,login,reload)
 	SetCVar("nameplateShowAll",1) --显示所有姓名板
 	SetCVar("nameplateShowSelf",0) --不显示个人资源
 	SetCVar("alwaysCompareItems", 0) -- 比较装备
+	SetCVar("nameplateMotion", 2)	-- 重叠姓名版
+	SetCVar("ShowClassColorInNameplate", 1) -- 姓名版职业颜色
+	SetCVar('ShowClassColorInFriendlyNameplate', 1) -- 友方姓名版颜色
+	
+	SetCVar("nameplateShowEnemyGuardians", 0) --守護者
+	SetCVar("nameplateShowEnemyMinions", 0)  --僕從
+	SetCVar("nameplateShowEnemyPets", 1)  --寵物
+	SetCVar("nameplateShowEnemyTotems", 1) --圖騰
+	SetCVar("nameplateShowEnemyMinus", 0) --次要
 	
 	if ( GetNumGroupMembers() < 5) then 
 		MyConfigRaidProfile()
@@ -107,3 +117,4 @@ end)
 
 -- number on arena nameplate
 local U=UnitIsUnit hooksecurefunc("CompactUnitFrame_UpdateName",function(F)if IsActiveBattlefieldArena()and F.unit:find("nameplate")then for i=1,5 do if U(F.unit,"arena"..i)then F.name:SetText(i)F.name:SetTextColor(1,1,0)break end end end end)
+
