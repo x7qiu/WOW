@@ -8,31 +8,31 @@
 
 ## 通用插件
 
-- **GladiatorlosSA2**
+#### GladiatorlosSA2
 
 大名鼎鼎的语音插件。默认设置太嘈杂，强烈建议禁用不必要的法术，“少即是多”。
 
-- **sArena**
+#### sArena
 
 竞技场框体插件。比同类插件简洁一些，看个人习惯。
 
 我很喜欢的两个设置：**镜像框体**让职业图标显示在左侧（因为我习惯把sArena放在屏幕右侧，这样职业图标更接近屏幕中间，方便观察敌对状态）和**禁用动态递减图标**（这样只需要记住自己技能的递减类别，而不是所有控制技能的递减类别）。
 
-- **Details**
+#### Details
 
 著名战斗统计插件，不用太多介绍。
 
 ## 监视Buff，Debuff
 
-#### **友方debuff: BigDebuffs**
+#### BigDebuffs： 团队框体debuff
 
-同类型插件中毫无争议的最优秀选择。需要开启团队框架，自定义性比较强所以可能要多花点时间设置。要说缺点的话一是无法在游戏里直接添加要监视的法术，所以如果作者更新不及时的话需要自己编辑lua文件(一个例子：https://bbs.nga.cn/read.php?tid=27552402)。另外BigDebuffs在姓名版固定了只能监视一个buff，所以我选择了在设置里禁用nameplate相关功能并且用flyPlateBuffs代替。
+同类型插件中毫无争议的最优秀选择。需要开启团队框架，自定义性比较强所以可能要多花点时间设置。要说缺点的话一是无法在游戏里直接添加要监视的法术，所以如果作者更新不及时的话需要自己编辑lua文件([ 一个例子](https://bbs.nga.cn/read.php?tid=27552402))。另外BigDebuffs在姓名版固定了只能监视一个buff，所以我选择了在设置里禁用nameplate相关功能并且用flyPlateBuffs代替。
 
 **建议设置**：增加最大buff数量
 
 ![bigdebuffs](images/bigdebuffs.jpeg)
 
-#### **友方buff：**
+#### WA: 团队框体buff
 
 基于 https://wago.io/NCj_4fg4O 修改
 
@@ -42,7 +42,7 @@
 
 ```
 
-#### **敌方姓名版buff/debuff：flyPlateBuffs**
+#### flyPlateBuffs:敌方姓名版
 
 专业监视姓名版的插件。可以显示多个buff/debuff并且从游戏内通过法术ID直接添加要监视的法术。由于这个插件已经3年多没更新过了所以直接跑会lua报错。解决方案是从[https://www.curseforge.com/wow/addons/flyplatebuffs] 下载之后打开World of Warcraft\_retail_\Interface\AddOns\flyPlateBuffs\flyPlateBuffs.lua然后删除第394，395，396行。另外某些法术默认没有监视，可以在图下位置添加
 
@@ -87,14 +87,14 @@
 
 效果：
 
-#### 自身buff WA
+#### WA：自身buff
 
 ```bash
 ```
 
 
 
-#### 其他姓名版监视WA
+#### WA：其他姓名版监视
 
 ```bash
 
@@ -102,41 +102,53 @@
 
 ## 监视CD
 
-#### **敌方CD: Omnibar**
+#### Omnibar： 敌方CD
 
 和BigDebuffs同作者，也是同类型插件中的最优秀选择。我的习惯是把打断，控制，爆发，自保设置成单独的bar而不是全部公用一个。
 我的设置：总是显示图标+仅敌对出现时+监视多个同职业玩家
 
-#### **友方CD: OmniCD**
+#### OmniCD：友方CD
 
 还有几个类似的比如Ability Team Tracker, 似乎没什么太大区别。
 
-#### **自身CD: Doom_CooldownPulse + WA**
+#### Doom_CooldownPulse + WA： 自身CD
 
 ```bash
 ```
 
 ## 监视递减
 
-- NameplateCCnTrainket：姓名版上显示徽章和递减
-- Diminish DR Tracker：框体上显示递减。我主要用来看焦点递减。
+#### NameplateCCnTrainket
 
-### 其他
+姓名版上显示徽章和递减
 
-- Platecolor: 当前选中姓名版右侧的蓝箭头
+#### Diminish DR Tracker
+
+框体上显示递减。我主要用来看焦点递减。
+
+## 其他
+
+#### Platecolor: 
+
+当前选中姓名版右侧的蓝箭头
 
 ![platecolor](images/platecolor.jpg)
 
-- 
-  RETabBinder：PVP情况下只tab敌对玩家，PVE情况下tab怪
+#### RETabBinder：
 
-- SpellActivationText: 暴雪默认技能触发提示中加上剩余时间
+PVP情况下只tab敌对玩家，PVE情况下tab怪
 
-  ![spellactivationtext](images/spellactivationtext.jpg)
+#### SpellActivationText:
 
-- SortGroup：固定自己在团队框体中的位置，方便用选择队友宏。
+暴雪默认技能触发提示中加上剩余时间
 
-  ![sorgroup](images/sorgroup.jpg)
+![spellactivationtext](images/spellactivationtext.jpg)
+
+#### SortGroup：
+
+固定自己在团队框体中的位置，方便用选择队友宏。
+
+![sorgroup](images/sorgroup.jpg)
 
 几个设置需要注意：
 
