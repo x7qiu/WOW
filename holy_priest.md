@@ -1,4 +1,4 @@
-# [PVP] [神牧] [9.15] 自用的插件和宏
+# [PVP] [神牧] [SL] 自用的插件和宏
 
 ## 为什么需要插件和宏
 
@@ -14,13 +14,21 @@
 
 #### sArena
 
-竞技场框体插件。比同类插件简洁一些，看个人习惯。
+竞技场框体插件。比同类插件简洁一些，并且用了十几年很难改了。如果是新玩家我可能会推荐GladiusEX， 可以在看框体的时候同时看到对方的关键技能CD。
 
-我很喜欢的两个设置：**镜像框体**让职业图标显示在左侧（因为我习惯把sArena放在屏幕右侧，这样职业图标更接近屏幕中间，方便观察敌对状态）和**禁用动态递减图标**（这样只需要记住自己技能的递减类别，而不是所有控制技能的递减类别）。
+建议两个设置：
+
+- **Layout Seetings --> Mirrored Frames**
+
+  让职业图标显示在插件框体左侧 。因为我习惯把sArena放在屏幕右侧，这样职业图标更接近屏幕中间，方便观察敌对状态。
+
+- **Global Settings --> 取消 Dynamic Icons**
+
+  建议所有的递减插件都设置成**非动态图标**。这样只需要记住自己技能的递减类别，而不是所有控制技能的递减类别。
 
 #### Details
 
-著名战斗统计插件，不用太多介绍。
+著名战斗统计插件。
 
 ## 监视Buff，Debuff
 
@@ -93,8 +101,6 @@
 !WA:2!TN5AZTr1zCCuuj0iOKetiecuAkZ0usBhhPvYsYmtFHxBjFtwYSs(6qR1UAxPDJL0U5SR8TEHgxi4qGCXeiajucEOqPxOTIomH0c0XFcEgpD4dqgKn5T5dqPpNDxzlll7yBcDMm2(fY7E2ZU75C(98))Z5Cwh9wNUG36duVhV1LRoX6eNQE2me1r54AV12sCDbvIOeHLp1WIevnT9WMvzIj4jIhkHQAwdfT54lyiRsIPzOOMx3fz8yPtRlz02)EOx)vFMV6R(Vf5ZNcVE3Qk5neAou0eH4MjDHSzBwHKkRusoDn(us3nHpL597Nt3GNy4IvjVIHlH04)0LDnPbrjtgjI(bpmX(WtoJOKqH0PtmUMePTqr6oCprynWt44lq4zMuxtkB22f1DDD9ccsJiL3iowBLXkouZnfpXqXt0exc2c4lrqll)4sKfRw3ejSACX7ouKiCMLi0MeFwdzU885K0DnDH82nbxftPMTqU8XP9aNceErLc6p79nzbDPik5uW7GpRsM8WUiyFIEdoMbFjCszmhOyZQYlgMvxzcP9ZLRaou6IfB0P2pCexCPYYRRtpsWGpl2eOhoNGndAwnRkPdNoD2Tt313WKzikI0rHhNRfcFELC8gsYC6PW7ZPGf8KNX6)HeZiPT34hVapr6qHrgCO(KvmKMHy2KOpJzfhh7LkPq(xqZ(UIJTW7MvxLyWMxnV008KurKYNXq(z3)06sztBsw2iHcNysIQbpfJoUjwKejpF2ErOHfiD9uyF2GpVrye0QebUMAP9EIZLLooDVZA9IScC2vrRZAppEIZzmutnI1Z4aos2)JRiQTNB8Afl9PVnBpHdVWLo)x(ENCA6iqFkIgY3BX0eesXni8g8oVPvKxyAr0oNq8M5cfkk2kh1gzyJkTsgxmfuel2AqMW9l2zCHetqgRCm8X82YDH)z3KSg4D4WHZzW7uuXkIVOs(0QKCMDCxtBra8q)W3jmSpi4Ss860wK5q29mNigDsV8q0yvIUe9bPpjTo0MieKnhVsEZBe4UhioKa6bpC3vxsDPUYdn1HNrbV94QfiPKE07cUhhW3g21CPqDPO6O5JpQIMuYzlFkf(YW9HnlxW97c2Tlyp3)HH9(U4d(bNMQzmdVpiNxpbz8aFx4XGhbEuy)UGhgoibdPJIxoj8qWbGVNlOo4bGd5sBVuv7isjS0dDPkk9NVl4NkDZHLK0AIgmBWr7SYWtvE0OYovV36UjkY15nOdzsYe74aNWHFY9d7Boulrve0q18ItDaThZqAmJHm)XIhdPnKHsoj7ZCO9WROc62habNEXR94)aTAutn7d4OprXRBEPLc(BQNeX0EaZcr3qvAaqkZas2MWtVP1dszmjRO0tmNvG5awrzoM186hRGUHs6XHDnJPkskbwiB0yrdb7JGDvADMXSIPkl)DoTDlmVXmHgtJiPRpk)4A7XQXjZJuFPiwT6QO4YVz7gs)Lp1SkJIX69r41MSp7dMBXxJPzBSEseP9OHSFpv4URT32Jgne3qSXsKiwxMzpS6AJOORiGE9lRnS8xk9PtnA8ODKvdJ2wtdziJ9uzmOECTV)QvxCWiLIzWYNpxMSQJgMiD8cs5tnE3Fl31Z0G1qk9cfP)uUPmj9eAFCoHcggQ5JHrCyYHzOfBz59GM1V8W300tw0n25SOkP1YLiBEX4M2WS0dtA2qsiRKA48iPCAE9ik4X718fWAzvlilPKr24eWpSx4NqT9HNW83FS5V)i6VKjqdvm12oaFSudayNUGUDvuurNMkRDSKDaD5GPajR2JiByOP)Kh9OJYNrTEf1JYkf0xW27TfJJ6b6S4GYEARqSm91y2SqyNStOQMZHGUuoSFZ5PE317gA221D2sp3Pw4m)15pZlo)zFBUrndJX0BAY8oHwH2GNe2f0HlIsEQifZ)SuqQ2(k7arJOBrrNhdfetcXCnz5lKeMo5uhg6d9W6YHTng0Fs4cWRGxPSp1tNeg8GCn41xq3vzprDKOgtOtMTZe8ZmnIGFUSzlBiziPTTbWp1babhqk0Nre16GHP8aYaYGcCmy4tazDa5WBkpOIvxdoUz3aiGoCcNqbhWVzCyuymyCyc4xa)s4xLe(1oGNXdmIdqcs)5WKLdYGFl8cYWZbNeE(heMYbCkRN0Z6aoTt4LCcVys4m7foRmCUkW953rLS2M((GPHbKHRqh2SntrtsQxzfMPvvYUxrjwM)720)VdxWfDaVvs41GxFrkpjl7cN6AlCQIMmnSt4sNaUStmqzuXHBqCaUrgm6rG3uMgW9Y7aJ5GFNzpYMDyPlXUbQzUglg61lJB)vZqk8ww2LBbdrwSPyiIikeryvtiIWvWXYziYRvWqKRN2eGigxjdxHKLsvkdPr0DBo4TzZiIWGDKoAoyJPcnw)tqPdIXkz4SlCXl9LN(DlDMtxAQpIcWWwkulur5ocWUmrpglDLk0E21yzmSA5NFg)EcULu(vP45RPoeh9rmGaOk0ju6DEVf(K33exx2Pn76SyEjz3dwOdTgJoGT4Jggzka3aKZxGabdULu0TPLAwkvC8gbwNf7IJmy)DNwQ3bBMYLQSor29(FXN8z2oMucAP0qetPLLuRchX10Z0kkBP5NJ8tGXJx)UzwfPhI4vWVnD45AbDkixxeh14RTw1k85Bm5QTKWsPsdLr9qnfDZw6FDT5FLPM)QN7gVX5QoV3a94pqOH9h8ydYBBBAL3drATMWYYKDvWnpRyglpDYvv3TPdxxlB21n3Sv1RTy9eo))qgsk06SytEcs6iwNU7B4gPizfQUpyQsV0FA1sZTtZj5SAAV1CIMcmEzc4oWwYuD7SCgUbKx1CvZw6QV48x(sFXhFACLbvNXQBL2ti7RPOKezPyWMjv6TzjJ2SwuByZtpngWTFpBaZZBvYV7m9b30PewnZtH5VY5x4n(GQTnBtRzFgTY43F7bwfBZ11cfe84XFqFnU9Kw24tAPlRPD0zXmtKDWOIhtw8PARglwqO0V)JOZ4Cj)tlsVKODXLjStxRt0zj5y94MHz7SERtABUdolJBr64iteTlHX8P6JIMQ52x8zV58VW7uXSnT2aMAbUfxF36eC(B032txzZdUUJ4MPPo40hU5C1cC27VYxxWv7vi4MPb)BftYHd(wj4OiyPzawRvyFTNNQBQkF145u0ZPR4lqprSN2iAdEBzkkRp0HML(8Tn4wlW9Lp)FCHl83RgCprcsHqdmylXce72m4wVBMPGhFbc617wY5Oy58zJnCGVZId2wtcrY16e(90vTMTX8N9FyN1YE2guSVYDKCZMsz12nm6BPgApR9fJXBJmBOpOWTT9v5o71gI8Ev3hZfU0Nw6SVu1RkmyqIQx1whyqpekXrrLLsf1dR)f0zbTgd4ZpZwY1MtJLV1a4gx6Kl8pF5QbGu0MLMGJ54E7CGkMVX3u55QXClXf0f0T3GBGzxER42DG7RfYn7r(olMUR2zgoyZXhpEIA854ekDQZx6Y)Hk8lVCf7Svxo(gYUCneEcmE97LzR53FDt77BjxTMBcsVALxCQxB(lEXkMCJ1sjIzKByD)EhJnA7uM)wLNAtxo2G(LSb9ei422LRQD58x5Jl9wxRA7Y(4hlN24TQ1pPTB32LldC1C3ND7X)gBwL32wh(DKtffrRL7kQc6SylEh(4n)e9obRCMA8P6MT078ELU8FJU11Z86R1kXxJVDWT8Z(41xdmE9S9(OSP(SplMFu7491cBWECBWCSASzkZs9nF1lsX5vNAfF51D6APvuSsaUo(K5cyUUgyy2ETbRxZwk6SmBRmrK9A8w50BMT05U68x4JUXF5cZ)HVs1RS3n5PygwI749hqzzFcHD6QUr(p9))o
 ```
 
-
-
 #### WA：其他姓名版监视
 
 ```bash
@@ -106,13 +112,14 @@
 #### Omnibar： 敌方CD
 
 和BigDebuffs同作者，也是同类型插件中的最优秀选择。我的习惯是把打断，控制，爆发，自保设置成单独的bar而不是全部公用一个。
-我的设置：总是显示图标+仅敌对出现时+监视多个同职业玩家
 
 #### OmniCD：友方CD
 
 还有几个类似的比如Ability Team Tracker, 似乎没什么太大区别。
 
 #### Doom_CooldownPulse + WA： 自身CD
+
+我不太喜欢OmniCD自带的牧师CD，就自己写了一个。其实没什么太大区别。
 
 ```bash
 ```
@@ -125,7 +132,7 @@
 
 #### Diminish DR Tracker
 
-框体上显示递减。我主要用来看焦点递减。
+用来看自身和焦点递减
 
 ## 其他
 
@@ -141,13 +148,13 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 
 #### SpellActivationText:
 
-暴雪默认技能触发提示中加上剩余时间
+暴雪默认技能触发提示中加上剩余时间。需要把`界面:战斗:法术警报不透明度 `调到高以及选上`界面:动作条:显示冷却时间`
 
 ![spellactivationtext](images/spellactivationtext.jpg)
 
 #### SortGroup：
 
-固定自己在团队框体中的位置，方便用选择队友宏。
+固定自己在团队框体中的位置，方便用`party1` 和`party2`选队友。
 
 ![sorgroup](images/sorgroup.jpg)
 
@@ -195,14 +202,14 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 
 ## 框体宏和焦点宏
 
-这里值得先讨论一下治疗在竞技场中的焦点设置问题。绝大多数情况下治疗的焦点目标应该是对面的读条控制职业，例如法师术士鸟德(猎人不在此范畴，因为猎人的控制是基于CD而不是读条)。如果没有上述职业或者对方两个dps都是上述职业，治疗的焦点应该是主集火目标，来观察重要buff第一时间驱散。对方治疗一般而言不需要设焦点。
+这里值得先讨论一下治疗在竞技场中的焦点设置问题。绝大多数情况下治疗的焦点目标应该是对方的读条控制职业，例如法师术士鸟德(猎人不在此范畴，因为猎人的控制是基于CD而不是读条)。如果没有上述职业或者对方两个dps都是上述职业，治疗的焦点应该是主集火目标，来观察重要buff第一时间进攻驱散。对方治疗一般而言不需要设焦点。永远不要设置友方为焦点，浪费一个通过宏来节省操作的途径。
 
 但是作为神牧，总会需要罚+恐来配合队友打双控/三控。这时候有几种解决方案：
 
-1. 手点框体/姓名版
-也许听起来不那么高端，但是其实这种方法大部分场合是完全可行的。尤其是如果对方姓名版附近没有特别多的干扰(比如独自站在远处的治疗)或者对速度要求不是特别高的时候。
+1. **手点框体/姓名版**
+   也许听起来不那么高端，但是其实这种方法大部分场合是完全可行的。尤其是如果对方姓名版附近没有特别多的干扰或者对速度要求不是特别高的时候。缺点是有可能失误点错，而且意图比较明显。
 
-2. 框体罚
+2. **框体宏**
 
 ```lua
 #showtooltip 圣言术：罚
@@ -211,11 +218,11 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 ```
 
 
-不切换目标直接对敌对框体用罚，尤其适用于贼法牧面对带开场隐形的职业第一波的时候(贼法控一打一，神牧随时准备罚潜行的框体)。
+不切换目标直接对敌对框体用罚，尤其适用于贼法牧面对带开场隐形的职业第一波的时候 。贼法控一打一，神牧随时准备罚潜行的框体。
 
-框体宏优点是永远也不会出现点不到人/对方清目标了/速度太慢等问题，缺点是每个技能要消耗3个键位。
+框体宏优点是永远也不会出现点不到人/对方清目标了等问题，缺点是每个技能要消耗3个键位。
 
-3.焦点框体宏+焦点宏
+3. **焦点框体宏+焦点技能宏**
 
 **将敌对框体1设为焦点。**
 
@@ -230,34 +237,57 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 /cast [mod:alt,@focus][harm]圣言术：罚;
 ```
 
-算是对前两种方案的折衷。比手点要准确，比框体要省键位。设置和切换焦点本身也是个常见的操作，做个宏不亏。最适用的场景是能提前几秒商量好下一波牧师控谁，提前用宏设置焦点顺便观察下焦点上有没有免控buff以及递减情况(配合Diminish DR Tracker在焦点框体上显示递减)，控完之后再切回平时的焦点。
+算是对前两种方案的折衷。比手点要准确，比框体要省键位。这也是欧美绝大部分职业选手的选择。
 
-另外切焦点+焦点宏也很适合玩DPS。平时焦点治疗，打治疗的时候焦点能拆火的DPS方便打断。
+最适用的场景是能提前几秒商量好下一波牧师控谁，提前用宏设置焦点顺便观察下焦点上有没有免控buff以及递减情况(配合Diminish DR Tracker在焦点框体上显示递减)，控完之后再切回平时的焦点。
 
-框体宏和焦点宏的不是二选一，完全可以一起使用。我个人把三个框体宏放在了我不那么容易按到的位置(F1, F2, F3)，主要开场用。焦点宏放在了三个很容易按到的鼠标侧键。偶尔也手点。
+框体宏和焦点宏的不是二选一，完全可以根据习惯一起使用。我个人把三个框体宏放在了我不那么容易按到的位置(`F1`,` F2`,` F3`)，主要开场用。焦点宏放在了三个最容易按到的鼠标侧键， 大部分时间用切焦点宏+焦点罚/焦点心控。偶尔手点。
+
+另外切焦点宏也很适合玩DPS。平时焦点治疗，打治疗的时候焦点能拆火的DPS。
 
 ## 技能整合宏
+
+#### 技能整合模版一
 
 ```lua
 #showtooltip 恢复
 /cast [mod:alt,@player] [help]恢复;[harm] 暗言术：痛
 ```
 
-对敌人使用是痛，对友方使用是恢复，按alt同时是对自己恢复。
+对敌人使用是痛，对友方使用是恢复。`alt`对自己恢复。
 
-很多类似的宏都会加一个[]空状态来实现在无目标的情况下对自己上恢复。我不太认同，因为可能会损失一个GCD(对面假死/消失/影遁清目标了或者鼠标点空了)，而牧师是场内最缺GCD的职业之一。上面的宏在没有目标的情况下是摁不出来技能的。我个人习惯是把所有治疗技能都做成整合宏，奶自己的时候一律用alt，只除了下面的一个例外。
+#### 技能整合模版二
 
-焦点驱散
+```lua
+#showtooltip 
+/cast [mod:alt, @focus][harm]暗言术：痛; [help]恢复
+```
+
+对敌人使用是痛，对友方使用是恢复。`alt`对焦点上痛。
+
+------
+
+两种整合宏的区别在于配合组合键（`alt`)的时候是对自己施法还是对焦点施法。如果是`alt`治疗自己，那么你还需要焦点进攻技能的宏。如果是`alt`对焦点施法，那么你还需要一个选择自己的宏（如果你按两个组合键速度一样快的话，可以用更优雅的解决方案，比如shift对焦点XX，alt对自己XX。但是绝大多数人都只按一个组合键舒服）。
+
+曾经这两种流派都有人用，但是现在99%的欧美职业治疗选手都选择了第二种流派：把所有整合技能都加入对焦点施法，再腾出一个专门的键位（`/tar player`)来选择自己。如果你是刚接触治疗，那么强烈建议也用模版二。
+
+我个人由于多年的习惯原因还是选择了第一种，只用alt奶自己。但是即便如此为了保证速度我也做了焦点进攻驱散，焦点罚，焦点心控等宏。其实相当于没有节省键位。
+
+另外，很多类似的宏都会加一个`[]`空状态来实现在无目标的情况下对自己上恢复。我不太认同，因为可能会因为对方假死/消失/影遁清目标损失一个GCD，而牧师是场内最缺GCD的职业之一。上面的宏在没有目标的情况下是摁不出来技能的。
+
+------
+
+#### 焦点驱散
+
 ```lua
 #showtooltip 纯净术
 /stopcasting
 /cast [mod:alt,@focus] [harm]驱散魔法;[help] 纯净术;
 ```
 
-因为焦点驱散实在是太重要了，所以这个宏打破了规律，alt是进攻驱散焦点而不是防御驱散自己。如果你按两个组合键速度一样快的话，可以用更优雅的解决方案，比如shift对焦点进攻驱散，alt对自己防御驱散。如果你和我一样只有按alt速度够快，则只能再做一个专门驱散自己的宏。
-(另一种方案是把防御驱散和一个不那么重要的进攻技能绑定在一起，进攻驱散单独按键。但是不把进攻驱散和防御驱散整合在一起我于情理上难以接受）
+同理还需要焦点罚（上面提过），焦点痛（万一要罚的战士开了盾反），焦点心控等等。
 
-## 用到TARGET的宏
+## TARGET宏
 
 #### 不切目标锁XX
 
@@ -268,13 +298,14 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 /targetlasttarget
 ```
 
-暗牧放通灵盟约技能之后用这个宏就会在(感官上)不丢失目标的情况下对召唤的法师读束缚。原理是先选中喋喋不休的法师，对他施放束缚亡灵，再选回之前的目标。一个实战例子：[https://www.bilibili.com/video/BV1cM4y1c7MT]▸
+暗牧放通灵盟约技能之后用这个宏就会在(感官上)不丢失目标的情况下对召唤的法师读束缚。原理是先选中喋喋不休的法师，对他施放束缚亡灵，再选回之前的目标。配合WA提醒非常克制暗牧。一个实战例子：[https://www.bilibili.com/video/BV1cM4y1c7MT]▸
 
 除了上述的主要用途外，这个宏还可以在场上没有“喋喋不休的法师"时用来选择之前的目标。几个实用场景：
 
-集火敌方猎人，猎人假死清目标，用这个宏可以立刻再选回猎人
+- 集火敌方猎人，猎人假死清目标，用这个宏可以立刻再选回猎人
 
-参与集火敌人，突然队友吃到控制或者血线危急，切到队友加血/驱散，然后再用宏选回刚才的敌人继续集火
+- 参与集火敌人，突然队友吃到控制或者血线危急，切到队友加血/驱散，然后再用宏选回刚才的敌人继续集火
+
 
 这个模板有很多其他应用，比如锁DK的黑锋石像鬼，以及PVE里的各种目标。不能用在暴雪禁止用target宏选中的目标(例如图腾)和某些特殊NPC(例如邪DK天赋的憎恶)。另外这类宏只是简单的选择叫XXX的目标，分不清NPC/玩家名/猎人宠物，所以如果碰巧对面玩家或者猎人宠物取了一样的名字则可能失败。不过“喋喋不休的法师”超过了玩家能取的最长名字，所以还好。
 
@@ -293,11 +324,13 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 /targetlasttarget [harm]
 ```
 
-alt灭框体，当前目标是敌人的话灭，当前目标是友方或者无目标时随机灭一个附近的敌人。
+alt灭框体，目标是敌人的话灭当前，目标是**友方**或者**无目标时**随机灭一个面对的敌人。
 
 根据随机慰宏改编而来。区别是我在第三行加入了alt指定灭框体并且优先级最高。这个宏我有四个，分别是alt灭焦点，框体1，2，3。平时灭焦点版放在主动作栏上，三个框体放在右侧动作栏。开场前准备的时候根据对方法师/猎人在框体的位置拖一个到技能栏替换掉焦点版。
 
 想灭框体的话就按alt+宏，框体灭不到(比如贼法牧内战，框体灭是法师在柱子后面，贼要来盲你或者牧师偷了羊对你读)想随便灭一个就用前面提到的队友宏选一个队友(我是鼠标滚轮上下，所以速度很快)然后按这个宏。
+
+另外很重要的一点：`/targetenemy`只能选中自己面前的敌人，所以**随机灭的部分必须要面对敌人你才能灭到**。如果是配合`alt`灭焦点或者框体的话则可以背对要灭的目标。
 
 ## 其他
 
@@ -328,33 +361,28 @@ alt灭框体，当前目标是敌人的话灭，当前目标是友方或者无�
 /cast [@player] 神圣守卫
 ```
 
-神牧技能细节
-强化渐隐术后开躲不了有弹道的技能，例如风暴之锤，死亡之箭。只能预判提前开。
+## 神牧技能细节
 
-强化渐隐术后开可以躲猎人冰冻。
+- 强化渐隐术后开躲不了有弹道的技能，例如风暴之锤，死亡之箭。只能预判提前开。
+- 强化渐隐术后开可以躲猎人冰冻。
 
-强化渐隐术可以完全抵消鸟德的日光(3秒结束后站在日光里也不会被沉默)。
+- 强化渐隐术可以完全抵消鸟德的日光(3秒结束后站在日光里也不会被沉默)。
 
-神圣守卫的判定和强化渐隐术不同。只要中技能的瞬间身上有守卫就可以抵消控制。
+- 神圣守卫的判定和强化渐隐术不同。只要中技能的瞬间身上有守卫就可以抵消控制。
 
-控制技能对神圣守卫的判定优先级高于渐隐。比如身上有守卫和渐隐，对方法师对你读羊，身上的守卫会消失(也就是说不能用渐隐保护神圣守卫)。但是强化渐隐的时候对方无法对你进攻驱散。
+- 控制技能对神圣守卫的判定优先级高于渐隐。比如身上有守卫和渐隐，对方法师对你读羊，身上的守卫会消失(也就是说不能用渐隐保护神圣守卫)。但是强化渐隐的时候对方无法对你进攻驱散。（这点似乎9.2已经改了，还没测试）。
 
-神圣守卫躲不了鸟德的缠绕+日光(沉默效果在，守卫也不消失)。神圣守卫也免疫不了格里恩低血量时候的范围击晕。应该还有其他技能，待补充。
+- 神圣守卫只能挡完全失控技能。不包括沉默和定神。
 
-飞天一共有三个阶段。
-1. 使用瞬间： 免疫所有技能。类似影遁，对方的技能会进cd，但是没有效果。
-2. 途中： 上升和下落的时候牧师吃除昏迷外所有技能。可以被打，可以被控制。如果在上升阶段吃到控制，会提前下落。
-3. 最高处： 其实和2一样，只是升到最高点的时候距离会超出大部分职业的射程。
+- 飞天途中上升和下落的时候牧师吃除昏迷外所有技能。可以被打，可以被控制。如果在上升阶段吃到控制，会提前下落。
+- 飞天期间可以使用所有的神圣系技能和瞬发的暗影技能，比如痛，灭，强化渐隐。所以碰到下落期间对你读羊的法师还是要灭或者渐隐躲。
+- 灭打在免疫的目标上(无敌，龟壳)或者打死了目标不能反伤。所以碰到开龟壳要冰的猎人必须灭其他人(或者宠物)。
 
-由于上面的原因，飞天用来躲控存在风险，最好提前开。
+- 大驱可以驱散法师的冰墙
 
-飞天期间可以使用所有的神圣系技能和瞬发的暗影技能，比如痛，灭，强化渐隐。所以碰到下落期间对你读羊的法师还是要灭或者渐隐躲。
 
-灭打在免疫的目标上(无敌，龟壳)或者打死了目标不能反伤。所以碰到开龟壳要冰的猎人必须灭其他人(或者宠物)。
+## 几个有用的网站
 
-大驱可以驱散法师的冰墙
-
-几个有用的网站
 https://pogu.live/
 
 看订阅才能看到的twitch录像
@@ -365,32 +393,33 @@ https://www.pvpleaderboard.com/
 
 https://murlok.io/
 
-导灵器，橙装 
+看导灵器，橙装 
 
 https://drustvar.com/
 
-比赛信息
+看比赛信息
 
-其他不错的WA，可以根据名字在wago上搜索：
+## 其他不错的WA，可以根据名字在wago上搜索：
 
-Healer cc： 自己队里治疗被控的时候声音+图标提示
+- Healer cc： 自己队里治疗被控的时候声音+图标提示
 
-Healer Dispel Arena：对方治疗驱散之后显示CD
+- Healer Dispel Arena：对方治疗驱散之后显示CD
 
-Mes Alerts：对方爆发技能提示
+- Mes Alerts：对方爆发技能提示
 
 
-作为平时全职工作+周末在职读书的海外党，很感谢这赛季陪我玩过的人：
+## 感谢这赛季陪我玩过的人：
 
-Soryu：90级门口插旗认识的，MOP之后我偶尔看到想要的PVP幻化都是喊Soryu来当打手，这次知道我回归之后把他的号从部落转到了联盟，从此开始了和我一起2=1。后来在联盟认识的朋友大多数通过soryu介绍，小号的2100也都是和他打的。没啥多说的，够意思。
+- Soryu
 
-V：同样是90级门口认识的，虽然当时我每次打到不错的成绩都要在NGA写点东西刷存在感，但其实队里的法师才是真正大腿。自从认识了V之后我们22法牧就一直是战场组最高的，内战没输过，打劣势局贼法也全都赢了(两次都是我死了之后V 1v2翻盘成功，可惜当时没录像)。90级的V是我见过最纯粹的PVP玩家，不是在竞技场鏖战就是在门口和人插旗，其他的时候都在twitch研究录像。如今的V比我上线时间还少，一个赛季才打了300场(还是玩的盗贼)，但是录像研究的更起劲了，每天我俩都在微信聊打法，然后谁都没的玩。
+- V
 
-M：简称蠢M，依旧是90级门口插旗认识的。90级的时候没怎么当过队友，但是作为对手每次碰到都感觉这战士伤害高的离谱。赛季初作为队友起早贪黑和我一起打了很多场，国内时间凌晨4-6点连预计等待时间都没有10分钟出一场的局打了至少几十局。可惜我们的战元牧被双菜刀砍散了，没打到龙。
+- M
 
-吾命：赛季初战元牧的队友。和M一起在国内时间凌晨陪我玩了很多次。
+- 吾命
 
-原初：NGA认识的骑士。联盟号的龙全靠大佬carry。
+- 原初
 
-七味唐辛子：B站认识的盗贼/法师/牧师。一共只打过几次，但是每次打完我都忍不住感叹怎么会有思路这么清晰的人。第一次玩就把我部落220没橙装没导灵器没打过贼法牧的牧师号带到了2500匹。后面用小号带我和刚回归法师的V在2700匹简直是降维打击，攻防两端都听他指挥按技能就完事了。
+- 七味唐辛子
+
 
