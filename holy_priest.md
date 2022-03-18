@@ -136,23 +136,23 @@
 
 ## 其他
 
-#### Platecolor: 
+#### Platecolor:
 
 当前选中姓名版右侧的蓝箭头
 
 ![platecolor](images/platecolor.jpg)
 
-#### RETabBinder：
+#### RETabBinder
 
 PVP情况下只tab敌对玩家，PVE情况下tab怪
 
-#### SpellActivationText:
+#### SpellActivationText
 
 暴雪默认技能触发提示中加上剩余时间。需要把`界面:战斗:法术警报不透明度 `调到高以及选上`界面:动作条:显示冷却时间`
 
 ![spellactivationtext](images/spellactivationtext.jpg)
 
-#### SortGroup：
+#### SortGroup
 
 固定自己在团队框体中的位置，方便用`party1` 和`party2`选队友。
 
@@ -206,11 +206,11 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 
 但是作为神牧，总会需要罚+恐来配合队友打双控/三控。这时候有几种解决方案：
 
-##### 1. **手点框体/姓名版**
+#### 1. **手点框体/姓名版**
 
 也许听起来不那么高端，但是其实这种方法大部分场合是完全可行的。尤其是如果对方姓名版附近没有特别多的干扰或者对速度要求不是特别高的时候。缺点是有可能失误点错，而且意图比较明显。
 
-##### 2. **框体宏**
+#### 2. **框体宏**
 
 ```lua
 #showtooltip 圣言术：罚
@@ -223,7 +223,7 @@ PVP情况下只tab敌对玩家，PVE情况下tab怪
 
 框体宏优点是永远也不会出现点不到人/对方清目标了等问题，缺点是每个技能要消耗3个键位。
 
-##### 3. **焦点框体宏+焦点技能宏**
+#### 3. **焦点框体宏+焦点技能宏**
 
 **将敌对框体1设为焦点。**
 
@@ -402,25 +402,21 @@ https://drustvar.com/
 
 ## 其他不错的WA，可以根据名字在wago上搜索：
 
-- Healer cc： 自己队里治疗被控的时候声音+图标提示
-
-- Healer Dispel Arena：对方治疗驱散之后显示CD
-
-- Mes Alerts：对方爆发技能提示
-
+- **Healer cc**： 自己队里治疗被控的时候声音+图标提示
+- **Healer Dispel Arena**：对方治疗驱散之后显示CD
+- **Mes Alerts**：对方爆发技能提示
 
 ## 感谢这赛季陪我玩过的人：
 
-- Soryu
+Soryu
 
-- V
+V
 
-- M
+M
 
-- 吾命
+吾命
 
-- 原初
+原初
 
-- 七味唐辛子
-
+七味唐辛子
 
