@@ -30,7 +30,7 @@ local function MyConfigRaidProfile()
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "autoActivatePvE", true)
 
     --团队框体位置
-    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 510, "BOTTOM", 50, "LEFT", 930)
+    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 450, "BOTTOM", 50, "LEFT", 850)
 	
 	--团队框体大小
 	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 145)
@@ -71,7 +71,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 
 	-- 焦点
 	FocusFrame:ClearAllPoints()
-	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -340, 300)
+	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -400, 350)
 	FocusFrame:SetScale(1.0)
 	FocusFrame:SetUserPlaced(true)
 	FocusFrameSpellBar:SetScale(1.8)
@@ -97,10 +97,10 @@ f:SetScript("OnEvent",function(self,login,reload)
 	SetCVar('ShowClassColorInFriendlyNameplate', 1) -- 友方姓名版颜色
 	
 	SetCVar("nameplateShowEnemyGuardians", 0) --守護者
-	SetCVar("nameplateShowEnemyMinions", 0)  --僕從
+	SetCVar("nameplateShowEnemyMinions", 1)  --僕從
 	SetCVar("nameplateShowEnemyPets", 1)  --寵物
 	SetCVar("nameplateShowEnemyTotems", 1) --圖騰
-	SetCVar("nameplateShowEnemyMinus", 0) --次要
+	SetCVar("nameplateShowEnemyMinus", 1) --次要
 	
 	if ( GetNumGroupMembers() < 5) then 
 		MyConfigRaidProfile()
