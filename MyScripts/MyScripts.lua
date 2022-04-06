@@ -30,7 +30,7 @@ local function MyConfigRaidProfile()
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "autoActivatePvE", true)
 
     --团队框体位置
-    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 450, "BOTTOM", 50, "LEFT", 850)
+    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 400, "BOTTOM", 50, "LEFT", 850)
 	
 	--团队框体大小
 	SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 145)
@@ -39,6 +39,7 @@ local function MyConfigRaidProfile()
     --刷新设置
     CompactUnitFrameProfiles_SaveChanges(CompactUnitFrameProfiles)
     CompactUnitFrameProfiles_ApplyCurrentSettings()
+	
 end
 
 local f=CreateFrame("frame")
@@ -46,22 +47,13 @@ f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:SetScript("OnEvent",function(self,login,reload)
 	-- 玩家
 	PlayerFrame:ClearAllPoints()
-	PlayerFrame:SetPoint("CENTER", UIParent, "CENTER", -150, -200)
+	PlayerFrame:SetPoint("CENTER", UIParent, "CENTER", -250, -150)
 	PlayerFrame:SetScale(1.0)
 	PlayerFrame:SetUserPlaced(true)
 	
-	--隐藏头像受到伤害和治疗数字
-	local p=PlayerHitIndicator; p.Show=p.Hide; p:Hide()
-	local p=PetHitIndicator; p.Show=p.Hide; p:Hide()
-	
-	-- 自己施法条
-	-- CastingBarFrame:ClearAllPoints()
-	-- CastingBarFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 20, -20)
-
-
 	-- 目标
 	TargetFrame:ClearAllPoints()
-	TargetFrame:SetPoint("CENTER", UIParent, "CENTER", 75, -200)
+	TargetFrame:SetPoint("CENTER", UIParent, "CENTER", 200, -150)
 	TargetFrame:SetScale(1.0)
 	TargetFrame:SetUserPlaced(true)
 
@@ -71,11 +63,33 @@ f:SetScript("OnEvent",function(self,login,reload)
 
 	-- 焦点
 	FocusFrame:ClearAllPoints()
-	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -400, 350)
+	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -425, 375)
 	FocusFrame:SetScale(1.0)
 	FocusFrame:SetUserPlaced(true)
-	FocusFrameSpellBar:SetScale(1.8)
+	FocusFrameSpellBar:SetScale(1.6)
+	
+	-- Buff
+	BuffFrame:ClearAllPoints()
+	BuffFrame:SetPoint("CENTER", UIParent, "CENTER", -650, 550)
+	
 
+	
+	
+	-- 宠物，图腾，神圣能量
+	--PetFrame:ClearAllPoints()
+	--PetFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 50, 50)
+	
+	--TotemFrame:ClearAllPoints()
+	--TotemFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 50, 50)
+
+
+	--隐藏头像受到伤害和治疗数字
+	local p=PlayerHitIndicator; p.Show=p.Hide; p:Hide()
+	local p=PetHitIndicator; p.Show=p.Hide; p:Hide()
+	
+	-- 自己施法条
+	-- CastingBarFrame:ClearAllPoints()
+	-- CastingBarFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 20, -20)
 	
 	LossOfControlFrame:SetScale(1.3)
 	LossOfControlFrame.RedLineTop:SetAlpha(0)
@@ -85,6 +99,13 @@ f:SetScript("OnEvent",function(self,login,reload)
 	MainMenuBarArtFrame.LeftEndCap:Hide()
 	MainMenuBarArtFrame.RightEndCap:Hide()
 	
+	-- PVP姓名版
+	-- 0  overlapping /堆叠 	/允许覆盖
+	-- 1  stacking    /折叠 /不允许覆盖
+	SetCVar("nameplateMotion", 0)				-- 允许重叠
+	SetCVar("nameplateOverlapV",  1.1)			-- 越小，姓名版允许离的越近
+	SetCVar("nameplateOverlapH",  0.8)
+	
 	SetCVar("WorldTextScale", 1.5) -- 战斗字体
 	SetCVar("profanityFilter",0) --语言过滤器
 	SetCVar("secureAbilityToggle", 1) -- 关闭自动取消冰箱，潜行，etc
@@ -92,7 +113,6 @@ f:SetScript("OnEvent",function(self,login,reload)
 	SetCVar("nameplateShowAll",1) --显示所有姓名板
 	SetCVar("nameplateShowSelf",0) --不显示个人资源
 	SetCVar("alwaysCompareItems", 0) -- 比较装备
-	SetCVar("nameplateMotion", 2)	-- 重叠姓名版
 	SetCVar("ShowClassColorInNameplate", 1) -- 姓名版职业颜色
 	SetCVar('ShowClassColorInFriendlyNameplate', 1) -- 友方姓名版颜色
 	
@@ -101,6 +121,8 @@ f:SetScript("OnEvent",function(self,login,reload)
 	SetCVar("nameplateShowEnemyPets", 1)  --寵物
 	SetCVar("nameplateShowEnemyTotems", 1) --圖騰
 	SetCVar("nameplateShowEnemyMinus", 1) --次要
+	
+	SetCVar("threatShowNumeric", 0) --目标姓名版仇恨数字
 	
 	if ( GetNumGroupMembers() < 5) then 
 		MyConfigRaidProfile()
@@ -115,6 +137,28 @@ end)
 
 
 
--- number on arena nameplate
-local U=UnitIsUnit hooksecurefunc("CompactUnitFrame_UpdateName",function(F)if IsActiveBattlefieldArena()and F.unit:find("nameplate")then for i=1,5 do if U(F.unit,"arena"..i)then F.name:SetText(i)F.name:SetTextColor(1,1,0)break end end end end)
 
+
+hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
+    if IsActiveBattlefieldArena() and frame.unit:find("nameplate") then
+        for i=1,5 do
+            if UnitIsUnit(frame.unit,"arena"..i) then
+                frame.name:SetText(i)
+                frame.name:SetTextColor(0,1,0)	-- green
+                break
+            end
+        end
+    end
+end)
+
+hooksecurefunc("CompactUnitFrame_UpdateName",function()
+	local name
+	for i = 1,3 do
+		name = _G["CompactRaidFrame"..i.."Name"]
+		-- print(name)
+
+		if name and IsActiveBattlefieldArena() then
+			name:Hide()
+		end
+	end
+end)
