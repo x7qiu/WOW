@@ -51,6 +51,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 	PlayerFrame:SetScale(1.0)
 	PlayerFrame:SetUserPlaced(true)
 	
+	
 	-- 目标
 	TargetFrame:ClearAllPoints()
 	TargetFrame:SetPoint("CENTER", UIParent, "CENTER", 200, -150)
@@ -61,6 +62,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 	TargetFrameToT:SetScale(1.0)
 	TargetFrameToT:SetUserPlaced(false)
 
+
 	-- 焦点
 	FocusFrame:ClearAllPoints()
 	FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -425, 375)
@@ -68,28 +70,22 @@ f:SetScript("OnEvent",function(self,login,reload)
 	FocusFrame:SetUserPlaced(true)
 	FocusFrameSpellBar:SetScale(1.6)
 	
+	
 	-- Buff
 	BuffFrame:ClearAllPoints()
-	BuffFrame:SetPoint("CENTER", UIParent, "CENTER", -650, 550)
-	
-
+	BuffFrame:SetPoint("CENTER", UIParent, "CENTER", 550, 550)
 	
 	
-	-- 宠物，图腾，神圣能量
-	--PetFrame:ClearAllPoints()
-	--PetFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 50, 50)
-	
-	--TotemFrame:ClearAllPoints()
-	--TotemFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 50, 50)
-
-
 	--隐藏头像受到伤害和治疗数字
 	local p=PlayerHitIndicator; p.Show=p.Hide; p:Hide()
 	local p=PetHitIndicator; p.Show=p.Hide; p:Hide()
 	
+	
 	-- 自己施法条
-	-- CastingBarFrame:ClearAllPoints()
-	-- CastingBarFrame:SetPoint("CENTER", PlayerFrame, "CENTER", 20, -20)
+	CastingBarFrame:ClearAllPoints()
+	CastingBarFrame:SetPoint("CENTER", WorldFrame, "CENTER", -25, -250)
+	--CastingBarFrame:SetUserPlaced(true)
+	
 	
 	LossOfControlFrame:SetScale(1.3)
 	LossOfControlFrame.RedLineTop:SetAlpha(0)
@@ -98,6 +94,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 
 	MainMenuBarArtFrame.LeftEndCap:Hide()
 	MainMenuBarArtFrame.RightEndCap:Hide()
+	
 	
 	-- PVP姓名版
 	-- 0  overlapping /堆叠 	/允许覆盖
@@ -127,30 +124,22 @@ f:SetScript("OnEvent",function(self,login,reload)
 	if ( GetNumGroupMembers() < 5) then 
 		MyConfigRaidProfile()
 	end
-	
-
-
-
-
-
 end)
 
-
-
-
-
+-- 竞技场敌对框体123
 hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
     if IsActiveBattlefieldArena() and frame.unit:find("nameplate") then
         for i=1,5 do
             if UnitIsUnit(frame.unit,"arena"..i) then
                 frame.name:SetText(i)
-                frame.name:SetTextColor(0,1,0)	-- green
+                frame.name:SetTextColor(1,1,0)
                 break
             end
         end
     end
 end)
 
+-- 竞技场隐藏队友名字
 hooksecurefunc("CompactUnitFrame_UpdateName",function()
 	local name
 	for i = 1,3 do
