@@ -93,36 +93,36 @@ f:SetScript("OnEvent",function(self,login,reload)
     MainMenuBarArtFrame.RightEndCap:Hide()
 	
     -- 姓名版相关
-    SetCVar("nameplateGlobalScale", 1.1)		-- 全局
-    SetCVar("nameplateSelectedScale", 1.2)		-- 选中缩放，默认1.2
-    SetCVar("NamePlateHorizontalScale", 1.4)		-- 大姓名版
-    SetCVar("NamePlateVerticalScale", 2.7)		-- 大姓名版
-    SetCVar("UnitNameEnemyPlayerName", 1)		-- 显示敌人姓名，配合后面的姓名版显示arena1，2，3
-	
-    -- PVP姓名版
-    -- 0  overlapping 	/堆叠 	/允许覆盖
-    -- 1  stacking    	/折叠 	/不允许覆盖
-    SetCVar("nameplateMotion", 0)			-- 允许重叠
-    SetCVar("nameplateOverlapV",  1.1)			-- 越小，姓名版允许离的越近
-    SetCVar("nameplateOverlapH",  0.8)
-	
-    SetCVar("nameplateShowEnemyGuardians", 0) 		-- 守護者
-    SetCVar("nameplateShowEnemyMinions", 1)  		-- 僕從
-    SetCVar("nameplateShowEnemyPets", 1)  		-- 寵物
-    SetCVar("nameplateShowEnemyTotems", 1) 		-- 圖騰
-    SetCVar("nameplateShowEnemyMinus", 1) 		-- 次要
-	
-    SetCVar("threatShowNumeric", 0) 			-- 目标姓名版仇恨数字
-	
-    SetCVar("WorldTextScale", 1.5) 			-- 战斗字体
-    SetCVar("profanityFilter",0) 			-- 语言过滤器
-    SetCVar("secureAbilityToggle", 1) 			-- 关闭自动取消冰箱，潜行，etc
-    SetCVar("nameplateShowSelf",0) 			-- 显示个人资源
-    SetCVar("nameplateShowAll",1) 			-- 显示所有姓名板
-    SetCVar("nameplateShowSelf",0) 			-- 不显示个人资源
-    SetCVar("alwaysCompareItems", 0) 			-- 比较装备
-    SetCVar("ShowClassColorInNameplate", 1) 		-- 姓名版职业颜色
+    SetCVar("nameplateGlobalScale", 1.0)		        -- 全局
+    SetCVar("nameplateSelectedScale", 1.1)		        -- 选中缩放，默认1.2
+    SetCVar("NamePlateHorizontalScale", 1.4)	        -- 大姓名版
+    SetCVar("NamePlateVerticalScale", 2.7)		        -- 大姓名版
+    SetCVar("UnitNameEnemyPlayerName", 1)		        -- 显示敌人姓名，配合后面的姓名版显示arena1，2，3
+    SetCVar("nameplateShowSelf",0) 			            -- 显示个人资源
+    SetCVar("nameplateShowAll",1) 			            -- 显示所有姓名板
+    SetCVar("nameplateShowSelf",0) 			            -- 不显示个人资源
+    SetCVar("ShowClassColorInNameplate", 1) 		    -- 姓名版职业颜色
     SetCVar('ShowClassColorInFriendlyNameplate', 1) 	-- 友方姓名版颜色
+	
+                                                        -- 0  overlapping 	/堆叠 	/允许覆盖
+                                                        -- 1  stacking    	/折叠 	/不允许覆盖
+    SetCVar("nameplateMotion", 0)	
+    SetCVar("nameplateOverlapH",  2.7)                  -- 越小，姓名版允许离的越近
+    SetCVar("nameplateOverlapV",  2.7)			        
+	
+    SetCVar("cameraDistanceMaxZoomFactor", 2.6)         -- 最远镜头
+    SetCVar("nameplateShowEnemyGuardians", 0) 	        -- 守護者
+    SetCVar("nameplateShowEnemyMinions", 1)  	        -- 僕從
+    SetCVar("nameplateShowEnemyPets", 1)  		        -- 寵物
+    SetCVar("nameplateShowEnemyTotems", 1) 		        -- 圖騰
+    SetCVar("nameplateShowEnemyMinus", 1) 		        -- 次要
+	
+    SetCVar("threatShowNumeric", 0) 			        -- 目标姓名版仇恨数字
+    SetCVar("WorldTextScale", 1.5) 			            -- 战斗字体
+    SetCVar("profanityFilter",0) 			            -- 语言过滤器
+    SetCVar("secureAbilityToggle", 1) 			        -- 关闭自动取消冰箱，潜行，etc
+    SetCVar("alwaysCompareItems", 0) 			        -- 比较装备
+
 	
     if ( GetNumGroupMembers() < 5) then 
 	    MyConfigRaidProfile()
@@ -139,6 +139,10 @@ hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
                 break
             end
         end
+    end
+    -- 隐藏友方姓名版名字
+    if strsub(frame.unit, 1, 9) == "nameplate" and UnitIsFriend("player", "target") then
+        frame.name:Hide()
     end
 end)
 
@@ -160,19 +164,19 @@ hooksecurefunc("CompactUnitFrame_UpdateSelectionHighlight", function(frame)
 if frame:IsForbidden() then return end
 if frame.unit:lower():match("nameplate") then
     if not frame.arrow then
-	frame.arrow = frame.healthBar:CreateTexture(nil, "PARENT")
-	frame.arrow:SetTexture("Interface\\Addons\\MyScripts\\feather.tga")		-- 图标路径
-	frame.arrow:SetPoint("left", frame.healthBar, "left", -40, 0)			-- 右方箭头位置
-	frame.arrow:SetSize(40, 20)							-- 箭头大小
-	frame.arrow:Hide()
+	    frame.arrow = frame.healthBar:CreateTexture(nil, "PARENT")
+	    frame.arrow:SetTexture("Interface\\Addons\\MyScripts\\arrow.tga")		-- 图标路径
+	    frame.arrow:SetPoint("right", frame.healthBar, "right", 40, 0)			-- 右方箭头位置
+	    frame.arrow:SetSize(40, 40)							-- 箭头大小
+	    frame.arrow:Hide()
     end
     if UnitIsUnit(frame.displayedUnit, "target") then
         frame.arrow:Show()
     else
-	frame.arrow:Hide()
+	    frame.arrow:Hide()
     end
     if (UnitIsUnit("player", frame.unit) or UnitIsFriend("player", "target")) and frame.arrow then
-	frame.arrow:Hide()
+	    frame.arrow:Hide()
     end
 end
 end)
@@ -200,7 +204,7 @@ for i, namePlate in ipairs(C_NamePlate.GetNamePlates()) do
 	    unitFrame.healthBar:SetHeight(30)
 	elseif hide[tonumber(id)] then
 	    unitFrame.healthBar:Hide()
-        elseif ((id == "134389") or (id == "134390") or (id == "174773")or (id == "170483")) and pt == true then
+    elseif ((id == "134389") or (id == "134390") or (id == "174773")or (id == "170483")) and pt == true then
 	    unitFrame.healthBar:SetStatusBarColor(0.3, 0, 0.6, 1) 	-- 怨毒
 	elseif reaction == 4 then
 	    unitFrame.healthBar:SetStatusBarColor(1, 1, 0, 1) 	-- 中立怪 黄色
@@ -216,12 +220,12 @@ end)
 green = {
     [120651] = true,		-- 易爆球
     [119052] = true, 		-- 战旗
-    [5925] = true, 		-- 根基
-    [5913] = true,		-- 战栗
+    [5925] = true, 		    -- 根基
+    [5913] = true,		    -- 战栗
     [53006] = true, 		-- 灵魂链接
     [59764] = true, 		-- 治疗之潮
     [105427] = true,		-- 天怒
-    [61245] = true,		-- 电能
+    [61245] = true,		    -- 电能
     [105451] = true,		-- 反击
     [166523] = true,		-- 墓钟
     [179867] = true,		-- 静电立场
