@@ -129,33 +129,36 @@ f:SetScript("OnEvent",function(self,login,reload)
     end
 end)
 
--- 竞技场敌对框体123
+-- 名字相关
 hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
+    -- 隐藏友方名字
+    if strsub(frame.unit, 1, 9) == "nameplate" and UnitIsFriend("player", "target") then
+        frame.name:Hide()
+    end
+    -- 竞技场敌对框体123
     if IsActiveBattlefieldArena() and frame.unit:find("nameplate") then
         for i=1,5 do
             if UnitIsUnit(frame.unit,"arena"..i) then
                 frame.name:SetText(i)
                 frame.name:SetTextColor(1,1,0)
+                frame.name:Show()
                 break
             end
         end
     end
-    -- 隐藏友方姓名版名字
-    if strsub(frame.unit, 1, 9) == "nameplate" and UnitIsFriend("player", "target") then
-        frame.name:Hide()
-    end
+    
 end)
 
 -- 竞技场隐藏队友名字
 hooksecurefunc("CompactUnitFrame_UpdateName",function()
     local name
     for i = 1,3 do
-	name = _G["CompactRaidFrame"..i.."Name"]
-	-- print(name)
+        name = _G["CompactRaidFrame"..i.."Name"]
+        -- print(name)
 
-	if name and IsActiveBattlefieldArena() then
-	    name:Hide()
-	end
+        if name and IsActiveBattlefieldArena() then
+            name:Hide()
+        end
     end
 end)
 
