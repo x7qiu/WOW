@@ -33,7 +33,7 @@ local function MyConfigRaidProfile()
     SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 400, "BOTTOM", 50, "LEFT", 850)
 	
     --团队框体大小
-    SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 145)
+    SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 155)
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameHeight", 75)
 
     --刷新设置
@@ -168,9 +168,10 @@ if frame:IsForbidden() then return end
 if frame.unit:lower():match("nameplate") then
     if not frame.arrow then
 	    frame.arrow = frame.healthBar:CreateTexture(nil, "PARENT")
-	    frame.arrow:SetTexture("Interface\\Addons\\MyScripts\\arrow.tga")		-- 图标路径
-	    frame.arrow:SetPoint("right", frame.healthBar, "right", 40, 0)			-- 右方箭头位置
-	    frame.arrow:SetSize(40, 40)							-- 箭头大小
+	    frame.arrow:SetTexture("Interface\\Addons\\MyScripts\\leftarrow.tga")		-- 图标路径
+        -- frame.arrow:SetPoint("right", frame.healthBar, "right", 40, 0)			-- 右方箭头位置
+	    frame.arrow:SetPoint("left", frame.healthBar, "left", -40, 0)			    -- 左方箭头位置
+	    frame.arrow:SetSize(40, 40)							                        -- 箭头大小
 	    frame.arrow:Hide()
     end
     if UnitIsUnit(frame.displayedUnit, "target") then
