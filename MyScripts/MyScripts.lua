@@ -123,18 +123,38 @@ f:SetScript("OnEvent",function(self,login,reload)
     SetCVar("secureAbilityToggle", 1) 			        -- 关闭自动取消冰箱，潜行，etc
     SetCVar("alwaysCompareItems", 0) 			        -- 比较装备
 
-	
-    if ( GetNumGroupMembers() < 5) then 
-	    MyConfigRaidProfile()
-    end
 end)
+
+-- /setui 时运行以下
+StaticPopupDialogs.SET_UI = {
+        text = "载入团队界面设置",
+        button1 = ACCEPT,
+        button2 = CANCEL,
+        OnAccept =  function() MyConfigRaidProfile() ReloadUI() end,
+        timeout = 0,
+        whileDead = 1,
+        hideOnEscape = true,
+        preferredIndex = 5,
+}
+SLASH_SETUI1 = "/setui"
+SLASH_SETUI2 = "/SETUI"
+SlashCmdList["SETUI"] = function()
+        StaticPopup_Show("SET_UI")
+end
+
+
 
 -- 名字相关
 hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
     -- 隐藏友方名字
-    if strsub(frame.unit, 1, 9) == "nameplate" and UnitIsFriend("player", "target") then
-        frame.name:Hide()
+    if frame.unit:find("nameplate") then
+        if UnitIsFriend("player", frame.unit) or (UnitPlayerControlled(frame.unit) and not UnitIsPlayer(frame.unit)) then
+            frame.name:Hide()
+        else
+            frame.name:Show()
+        end
     end
+    
     -- 竞技场敌对框体123
     if IsActiveBattlefieldArena() and frame.unit:find("nameplate") then
         for i=1,5 do
@@ -162,28 +182,37 @@ hooksecurefunc("CompactUnitFrame_UpdateName",function()
     end
 end)
 
---血条右侧显示箭头
+
+-- 感谢RSplate作者
 hooksecurefunc("CompactUnitFrame_UpdateSelectionHighlight", function(frame)
 if frame:IsForbidden() then return end
 if frame.unit:lower():match("nameplate") then
-    if not frame.arrow then
-	    frame.arrow = frame.healthBar:CreateTexture(nil, "PARENT")
-	    frame.arrow:SetTexture("Interface\\Addons\\MyScripts\\leftarrow.tga")		-- 图标路径
-        -- frame.arrow:SetPoint("right", frame.healthBar, "right", 40, 0)			-- 右方箭头位置
-	    frame.arrow:SetPoint("left", frame.healthBar, "left", -40, 0)			    -- 左方箭头位置
-	    frame.arrow:SetSize(40, 40)							                        -- 箭头大小
-	    frame.arrow:Hide()
+    if not frame.healthBar.glow then
+        frame.healthBar.glow =  frame.healthBar:CreateTexture("mouseoverhighlight", "BACKGROUND", nil, -3)
+        frame.healthBar.glow:SetTexture("Interface\\AddOns\\RSPlates\\media\\spark-flat")
+        frame.healthBar.glow:SetPoint("TOPLEFT", frame.healthBar, "TOPLEFT", -25, 15)
+        frame.healthBar.glow:SetPoint("BOTTOMRIGHT", frame.healthBar, "BOTTOMRIGHT", 25, -15)
+        frame.healthBar.glow:SetVertexColor(1, .95, .25, 1)
+        frame.healthBar.glow:Hide()
+    end 
+    if not frame.healthBar.glowboarder then   
+        frame.healthBar.glowboarder =  frame.healthBar:CreateTexture("MGlowBorder", "BACKGROUND", nil, -2)
+        frame.healthBar.glowboarder:SetTexture("Interface\\AddOns\\RSPlates\\media\\bar_solid")
+        frame.healthBar.glowboarder:SetPoint("TOPLEFT", frame.healthBar, "TOPLEFT", -3, 3)
+        frame.healthBar.glowboarder:SetPoint("BOTTOMRIGHT", frame.healthBar, "BOTTOMRIGHT", 3, -3)
+        frame.healthBar.glowboarder:SetVertexColor(1, .95, .25, 1)
+        frame.healthBar.glowboarder:Hide()
     end
-    if UnitIsUnit(frame.displayedUnit, "target") then
-        frame.arrow:Show()
+    if UnitIsUnit(frame.displayedUnit, "target") and not UnitIsFriend("player", "target") then
+        frame.healthBar.glow:Show()
+        frame.healthBar.glowboarder:Show()
     else
-	    frame.arrow:Hide()
-    end
-    if (UnitIsUnit("player", frame.unit) or UnitIsFriend("player", "target")) and frame.arrow then
-	    frame.arrow:Hide()
+        frame.healthBar.glow:Hide()
+        frame.healthBar.glowboarder:Hide()
     end
 end
 end)
+
 
 --血条变色
 local frame = CreateFrame("Frame")
@@ -198,25 +227,25 @@ for i, namePlate in ipairs(C_NamePlate.GetNamePlates()) do
     if unitFrame:IsForbidden() then return end
 
     if not UnitIsPlayer(unitFrame.unit) and not UnitIsTapDenied(unitFrame.unit) and C_NamePlate.GetNamePlateForUnit(unitFrame.unit) ~= C_NamePlate.GetNamePlateForUnit("player") then
-	local reaction = UnitReaction(unitFrame.unit, "player")
-	local guid = UnitGUID(unitFrame.unit)
-	local _, _, _, _, _, id = strsplit("-", guid or "")
-	local pt = UnitIsUnit(unitFrame.unit.."target", UnitName("player"))
+        local reaction = UnitReaction(unitFrame.unit, "player")
+        local guid = UnitGUID(unitFrame.unit)
+        local _, _, _, _, _, id = strsplit("-", guid or "")
+        local targetingPlayer = UnitIsUnit(unitFrame.unit.."target", UnitName("player"))
 
-	if green[tonumber(id)] then
-	    unitFrame.healthBar:SetStatusBarColor(0, 1, 0, 1)	-- 特殊血条 绿色
-	    unitFrame.healthBar:SetHeight(30)
-	elseif hide[tonumber(id)] then
-	    unitFrame.healthBar:Hide()
-    elseif ((id == "134389") or (id == "134390") or (id == "174773")or (id == "170483")) and pt == true then
-	    unitFrame.healthBar:SetStatusBarColor(0.3, 0, 0.6, 1) 	-- 怨毒
-	elseif reaction == 4 then
-	    unitFrame.healthBar:SetStatusBarColor(1, 1, 0, 1) 	-- 中立怪 黄色
-	elseif reaction >= 5 then
-	    unitFrame.healthBar:SetStatusBarColor(0, 1, 0, 1)	-- 友方npc 绿色
-	else
-	    unitFrame.healthBar:SetStatusBarColor(1, 0, 0, 1)	-- 其他 红色	
-	end
+        if green[tonumber(id)] then
+            unitFrame.healthBar:SetStatusBarColor(0, 1, 0, 1)	-- 特殊血条 绿色
+            unitFrame.healthBar:SetHeight(30)
+        elseif hide[tonumber(id)] then
+            unitFrame.healthBar:Hide()
+        elseif ((id == "134389") or (id == "134390") or (id == "174773")or ((id == "170483")) and targetingPlayer) then
+            unitFrame.healthBar:SetStatusBarColor(0.3, 0, 0.6, 1) 	-- 怨毒
+        elseif reaction == 4 then
+            unitFrame.healthBar:SetStatusBarColor(1, 1, 0, 1) 	-- 中立怪 黄色
+        elseif reaction >= 5 then
+            unitFrame.healthBar:SetStatusBarColor(0, 1, 0, 1)	-- 友方npc 绿色
+        else
+            unitFrame.healthBar:SetStatusBarColor(1, 0, 0, 1)	-- 其他 红色	
+        end
     end
 end
 end)
@@ -243,3 +272,19 @@ hide = {
     [95072] = true,		-- 巨型土元素
     [5394] = true, 		-- 治疗之泉 测试
 }
+
+hooksecurefunc("UnitFramePortrait_Update",function(self)
+        if self.portrait then
+                if UnitIsPlayer(self.unit) then
+                    if self.unit == "focus" or (IsActiveBattlefieldArena() and self.unit == "target") or self.unit == "targettarget" then
+                        local t = CLASS_ICON_TCOORDS[select(2, UnitClass(self.unit))]
+                        if t then
+                                self.portrait:SetTexture("Interface\\TargetingFrame\\UI-Classes-Circles")
+                                self.portrait:SetTexCoord(unpack(t))
+                        end
+                    end
+                else
+                        self.portrait:SetTexCoord(0,1,0,1)
+                end
+        end
+end)
