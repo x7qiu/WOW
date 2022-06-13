@@ -1,3 +1,7 @@
+* 触发器： 从上而下match，如果match了就return
+* 条件：从上而下match，都match到的**下方覆盖上方**
+
+---
 * Buff存在时, 发光 + 持续时间
 * Buff不在时, 褪色 + 法术CD
 ```bash
