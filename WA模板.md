@@ -10,8 +10,29 @@
 ```
 
 切割
-* Buff存在时, 持续时间
-* Buff不在时，高亮 + 褪色
+* 图示
+    * 图标来源 - 动态信息
+    * 文本 - %p
+        * 格式选项 - 精度   
+* 触发器1
+    * 类型 - 光环
+    * 光环类型 - 增益效果
+    * 法术ID - 
+    * 显示于 - 总是
+    * 匹配偏好 - 最小剩余时间
+* 条件
+    * 条件1
+        * 光环被找到 - 真 
+        * 发光 - 可见性 - N
+    * 条件2
+        * 光环被找到 - 假
+        * 发光 - 可见性 - Y 
+        * 褪色 - Y
+        * 文本 - 可见性 - N
+    * 条件3
+        * 剩余时间 <= 3.5
+        * 发光 - 可见性 - Y  
+ 
 ```bash
-!WA:2!1v1tVTvrq8AzIqyPkrm0Osen0)awQiuejTns0B5L6u(Jjo9zhA5ayVV3BT3n55Dx2DFoXf4q9fkie06I4aItwiKqcjK8jeIt5tWklu)aePubxZNaMDFpNwOj(GFZoZS)Mz)n7mBUvl2PyuXO7EHH0qoRgprgIF5t4hYJ5Y3np8t2RARwkSo3ielKWLRZPmDWkLxREz)XHCECeFBwTTPcCZDNSSCuBmrIc1uotTKVsJK6cbTOmQIuWd(Ol0xlPTBJLQpUKmt8HYefEnuhmzpvsaUlMPRL0QfDNrnwz5A1BuR(Y(1hgHdaL17jWY3UCL1xDJk(oxdEBmkwt8sa0deXOEyPpdatv4aa2Y7aztnboo(DIA2xLkOkCyGwxIHa5xB9YvQmaLirUTo7b7)N)X(F93)OF)E)ZpCVh9J)MNgIRV1(I7A)3bensnBWLw4kx(TwkacLpUdzqcl7qvOK5KTmZzEfZPBAoLzMXDq6qcwvJW3UkBSY959PkfL12C2znNZmTPO5cfgfrvBMWakSlEreRNyAKtUEkSVppc)RN4aOuGLmu8haejW1BDWwySyziRc1(iG9jdu44wUsMzkG6uinK1AmziCW9XTT1NRoJzUXWYau4wTL8ew0DpJ4CA8o6gU)AXLqo3q0qt7GBiK4qQnw5fV0t5JktWJXz4bhA(8VMqC2JdWo8Og2uQ5EoJhMVElVr9QIxWPeLO5WwOH3KgbL4LHLhKcfDhCKt5DgNE98dZUTkE1JlGX42OWEnAfZ5sYUoh2mrPPT6buKKRHCPoO0BTQRvwCXJdLOEWneAydnrIHIyC0rhXaA7gSKobyzMoX0lheiXDPqywZzqDKBmcO5oO4hZ35mZjHQK1lXChxwLUk3qNPh3dpiZvOl5VVZxT)p9lhrTtKjeKMvIIPLdccAONqQJpehx)x1nQx5DwRCQ2T5YOBkrI(3mtiLA7cjFqmUP45tRKpEgIzQmDPXyfx2MlxU8)NqFRNk01O3gFXSQ9eRIZCeNh3D5gUowxX(HJBhZ3Evj(tsWSWER)mV58lELuw1AyxO396XzjcPVvL9uooirR5SQDXsyOYqR6kywBn5uJSYtOMbTNSvhJ7zx205XTEspQfIIX5DjsDcnClgwPY7SuHcYt7W3dyqSKeqW02e9n8I5OOFEVWyKsbeyudB)DHanGetpJFNKynTGVZCPa7CKySVF1RVrzdPWa4q1WzQ5Ewr3aRTyWmAYarxrkgLmBM3qMTPNfyyXut2idMnkHzfhUPtN3lWtbfaWlFKeZqgsjJQ5qBhCKtbi7MRy5op7BkJHUxOuvv4EnOWiklTcbRkmaXOPIlzEUv3fJu4AAPJEFwyO5cJJSJRaZUYOuHb8Iu9T(zX3SGxheLTQ52oVnFQ5ZmFo8TW)xZOwsyEoansJY7JIfeuEVBZ5DYTycnA01EVov28I7uzHwOHAEy30PPNoxZp680OG9V7xS)xo6G0BCRAbYg7GAR4xU8AIIarTs27EWuzF7Om)TTJKUraKTTOTliPmlKyI4fN8cPDcZ1Oke0AermDBo0EWOog61l5dpqeU1sMtMVFxKKADYZ(qHFxuCcoVmKGyTHxNkzUpPVqYbMr3ZorF(lnV9(tjZ3aBEkZ3AUN5(5ndUk4ytZdmFx233ygZdefT(V48pztA)jzxt5ozxAlQ8V88qFsXU)1T(3)
+!WA:2!1v1tpUrnu8gfwvrqirdWQYkkcwGi1dn0UB7krfCiZ2STfcjBNKLwoGs8mJZmU7eBJTN8NkU0CHccjkPfoG4uecjKqcPCcH40(jWkcXhGvARGR7boZZotsBHT5qMNF(9E(9(537NZSv(o5dYhCNxFmXNrRZse(4x(ytrjQiMOgxryuzoXGATBlXQmtquFq)2mcv5Tz5Qnk7o1NXIdy9O17r44w7nFz5GqCKa5BJWgUsfsOY5qOevoV2WhzuUHkbjmelKvlisf)hrIexf1bh5bcU4or7lt8WDXuv9K2Tj9N0CZs1B0SEJsUngcM0GPqXrt7Gu(ryz9iwVA0Xs4tP4EObsxRRExbJIvrojWP7XJrdWIdbFl3hsV6CCC8vdAT4C2wGHZXT(2LRuzOC2UYCUuiPK5gHseiR4khEWV)Bh8LF7d(17(3F3DFW3)l7z2YApjqUI36N7cN)T3WrnGJDn7S24aShucnafIRuUY2BTtLrj006o3KaI8MjuaU6IxdrhWpbYk3y2(Fala)Zh7qa2Xckk(dbqdW1DpCxmMxcouFLlcq6OrikPJrIUH(P3sVQdLrX7HrsCDLatdvrhFAaKnglAAYnHed37bYHgBm5M(moDqek4R(m6Ihx)w6ZQphi(m)xnq9irktSWrJbWZfhAUQV4Y6vNcl9q(7gkyj0G7Ck(ROW9vnT)1MjGeSjVPI0bNUkd)L(Fgitf0Nz0I9w9n58x9jfQoSGMMKP1(2nL4422(uNs70Og)5TkH2AMbE8Voja6hkblpCwOi9XbwL3M)CZ8pcbTXBYIzI3ltMmzNoR1)JsNe2ZA0ntKks7b6LglG(qfUbO0PATQLtT(gPwZFJJiR9iHnPjD8WIuD8tuYZtG7sGiv1UH8iDma7dxYXn5cqW0hKrVQaGCJv8x7jHplSo7y7U(2sll8BuQ1WGYFD7V4GF4NoYt1gKyCiYFqZ2XmMiIN)rqQhhy6cNKxmU1u7QEmrW1fi(WRNkmDXjAhhQTtJkxTA5uK)r4y0lDeDg8ubVzy0JLfZb8hEa1j3cFA(PFsfuWayAM43ufjWaTrCqg(PocBTnY2bgxBT)NtdJz92sG)Kem1FW2p1zlU2fMDly2ypGD5YXPTprdnQmf6uVeLIrR1flasOXg1vSdLV4eJ8CiCu4CxTxpoMLTSwSO8SrmI4VlflLzTou3hfJNjwHaQpHn(oaIJfrErysyK6AoXmuWpUVFmskbGoOPH7iNhWHcmFl72jjwrY5yuwWtsOHX4L00CJGYPP1Nw7BeTSC7sbw(Or8U8zExqZZQPR0Y1AiSY1T2L3P8C3Pa5Qaikw46jZ645iHBhJPiGCcPPfgBMGdSRAPh0ASWsQyWohZ7tJwmvRxA48xAAP)0wI(PiJZTySoz8aBBtcZnwX87oJR8KzA9XRsc8o4oF2bF(exumpcLDsBbWLduJifk7HZA82YOYCIE130TC5QU9m0cxBTesWKl9(DQCZt3VY5AJeeQjYyykakVntZfGN21WbXFH5zNHs4sejcMgcIgB4Aj2NeVybx4fl)D3q)Szh2fcNXcpZle4a3UO4eCwHFeIgcp1S8qUGbZjQbgI2IRx0CZwq)vgF13v)16rz037If0JAPVV(Bs)U(Y67ZZBSFTIp6mj43ww)2h3NtM9uqdyuqpAT1lEHvz8vFN3vFVvMhTje6SPaWSCUpK0iV098fHU(8D)JB8V
 ```
