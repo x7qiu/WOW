@@ -1,5 +1,11 @@
-* 触发器： 从上而下match，如果match了就return
-* 条件：从上而下match，都match到的**下方覆盖上方**
+## 图示/Display
+发光，褪色，文本等如果勾选了，则为默认开启。
+
+## 触发器： 
+从上而下match，如果match了就return
+
+## 条件：
+从上而下match，都match到的**下方覆盖上方**
 
 ---
 强化渐隐术
