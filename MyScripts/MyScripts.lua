@@ -94,7 +94,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 	
     -- 姓名版相关
     SetCVar("nameplateGlobalScale", 1.0)		        -- 全局
-    SetCVar("nameplateSelectedScale", 1.1)		        -- 选中缩放，默认1.2
+    SetCVar("nameplateSelectedScale", 1.2)		        -- 选中缩放，默认1.2
     SetCVar("NamePlateHorizontalScale", 1.4)	        -- 大姓名版
     SetCVar("NamePlateVerticalScale", 2.7)		        -- 大姓名版
     SetCVar("UnitNameEnemyPlayerName", 1)		        -- 显示敌人姓名，配合后面的姓名版显示arena1，2，3
@@ -200,7 +200,8 @@ if frame.unit:lower():match("nameplate") then
         frame.healthBar.glowboarder:SetTexture("Interface\\AddOns\\RSPlates\\media\\bar_solid")
         frame.healthBar.glowboarder:SetPoint("TOPLEFT", frame.healthBar, "TOPLEFT", -3, 3)
         frame.healthBar.glowboarder:SetPoint("BOTTOMRIGHT", frame.healthBar, "BOTTOMRIGHT", 3, -3)
-        frame.healthBar.glowboarder:SetVertexColor(1, .95, .25, 1)
+        -- frame.healthBar.glowboarder:SetVertexColor(1, .95, .25, 1)
+        frame.healthBar.glowboarder:SetVertexColor(0, 0, 0, 1)
         frame.healthBar.glowboarder:Hide()
     end
     if UnitIsUnit(frame.displayedUnit, "target") and not UnitIsFriend("player", "target") then
@@ -266,6 +267,7 @@ green = {
     -- [180113] = true, 	-- 喋喋不休的法师
     [179193] = true, 		-- 邪能方尖碑
     [179733] = true, 		-- 鱼串
+    [135002] = true,        -- 恶魔暴君
 }
 
 hide = {
