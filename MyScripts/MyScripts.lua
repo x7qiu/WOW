@@ -30,7 +30,7 @@ local function MyConfigRaidProfile()
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "autoActivatePvE", true)
 
     --团队框体位置
-    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 400, "BOTTOM", 50, "LEFT", 850)
+    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 400, "BOTTOM", 200, "LEFT", 850)
 	
     --团队框体大小
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 155)
@@ -57,18 +57,20 @@ f:SetScript("OnEvent",function(self,login,reload)
     TargetFrame:SetScale(1.0)
     TargetFrame:SetUserPlaced(true)
 
-    TargetFrameToT:ClearAllPoints()
-    TargetFrameToT:SetScale(1.5)
-    TargetFrameToT:SetPoint("CENTER", UIParent, "CENTER", 230, -95)
-    TargetFrameToT:SetUserPlaced(true)
-
     -- 焦点
     FocusFrame:ClearAllPoints()
-    FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -425, 375)
+    FocusFrame:SetPoint("CENTER", UIParent, "CENTER", -250, 300)
     FocusFrame:SetScale(1.0)
     FocusFrame:SetUserPlaced(true)
-    FocusFrameSpellBar:SetScale(1.6)
-	
+    FocusFrameSpellBar:SetScale(1.4)
+
+    
+    -- 目标的目标
+    TargetFrameToT:ClearAllPoints()
+    TargetFrameToT:SetScale(1.5)
+    TargetFrameToT:SetPoint("CENTER", TargetFrame, "CENTER", 95, 3)
+    TargetFrameToT:SetUserPlaced(true)
+    
     -- Buff
     BuffFrame:ClearAllPoints()
     BuffFrame:SetPoint("CENTER", UIParent, "CENTER", 550, 550)
@@ -79,12 +81,12 @@ f:SetScript("OnEvent",function(self,login,reload)
 		
     -- 自己施法条
     CastingBarFrame:ClearAllPoints()
-    CastingBarFrame:SetPoint("CENTER", WorldFrame, "CENTER", -25, -250)
+    CastingBarFrame:SetPoint("CENTER", WorldFrame, "CENTER", -25, -300)
     CastingBarFrame.Icon:Show()				
     CastingBarFrame.Icon:SetSize(26,26)		
-    --CastingBarFrame:SetUserPlaced(true)
+    CastingBarFrame.SetPoint = function() end
 		
-    LossOfControlFrame:SetScale(1.3)
+    LossOfControlFrame:SetScale(1.2)
     LossOfControlFrame.RedLineTop:SetAlpha(0)
     LossOfControlFrame.RedLineBottom:SetAlpha(0)
     LossOfControlFrame.blackBg:SetAlpha(0)
@@ -94,13 +96,12 @@ f:SetScript("OnEvent",function(self,login,reload)
 	
     -- 姓名版相关
     SetCVar("nameplateGlobalScale", 1.0)		        -- 全局
-    SetCVar("nameplateSelectedScale", 1.2)		        -- 选中缩放，默认1.2
     SetCVar("NamePlateHorizontalScale", 1.4)	        -- 大姓名版
     SetCVar("NamePlateVerticalScale", 2.7)		        -- 大姓名版
+    SetCVar("nameplateSelectedScale", 1.1)		        -- 选中缩放，默认1.2
     SetCVar("UnitNameEnemyPlayerName", 1)		        -- 显示敌人姓名，配合后面的姓名版显示arena1，2，3
-    SetCVar("nameplateShowSelf",0) 			            -- 显示个人资源
+    SetCVar("nameplateShowSelf",0) 			            -- 显示个人姓名版
     SetCVar("nameplateShowAll",1) 			            -- 显示所有姓名板
-    SetCVar("nameplateShowSelf",0) 			            -- 不显示个人资源
     SetCVar("ShowClassColorInNameplate", 1) 		    -- 姓名版职业颜色
     SetCVar('ShowClassColorInFriendlyNameplate', 1) 	-- 友方姓名版颜色
 	
@@ -115,13 +116,22 @@ f:SetScript("OnEvent",function(self,login,reload)
     SetCVar("nameplateShowEnemyMinions", 1)  	        -- 僕從
     SetCVar("nameplateShowEnemyPets", 1)  		        -- 寵物
     SetCVar("nameplateShowEnemyTotems", 1) 		        -- 圖騰
-    SetCVar("nameplateShowEnemyMinus", 1) 		        -- 次要
+    SetCVar("nameplateShowEnemyMinus", 0) 		        -- 次要
 	
     SetCVar("threatShowNumeric", 0) 			        -- 目标姓名版仇恨数字
     SetCVar("WorldTextScale", 1.5) 			            -- 战斗字体
     SetCVar("profanityFilter",0) 			            -- 语言过滤器
     SetCVar("secureAbilityToggle", 1) 			        -- 关闭自动取消冰箱，潜行，etc
     SetCVar("alwaysCompareItems", 0) 			        -- 比较装备
+    
+    -- 隐藏荣誉等级图标
+    PlayerPrestigeBadge:SetAlpha(0)
+    PlayerPrestigePortrait:SetAlpha(0)
+    TargetFrameTextureFramePrestigeBadge:SetAlpha(0)
+    TargetFrameTextureFramePrestigePortrait:SetAlpha(0)
+    FocusFrameTextureFramePrestigeBadge:SetAlpha(0)
+    FocusFrameTextureFramePrestigePortrait:SetAlpha(0)
+    
 
 end)
 
@@ -149,6 +159,7 @@ hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
     -- 隐藏友方名字
     if frame.unit:find("nameplate") then
         if UnitIsFriend("player", frame.unit) or (UnitPlayerControlled(frame.unit) and not UnitIsPlayer(frame.unit)) then
+        --if UnitIsFriend("player", frame.unit) then
             frame.name:Hide()
         else
             frame.name:Show()
@@ -181,6 +192,9 @@ hooksecurefunc("CompactUnitFrame_UpdateName",function()
         end
     end
 end)
+
+-- 放大buff
+-- hooksecurefunc("TargetFrame_UpdateBuffAnchor", function(_, name, i) _G[name..i]:SetSize(22, 22) end);
 
 
 -- 感谢RSplate作者
@@ -290,3 +304,4 @@ hooksecurefunc("UnitFramePortrait_Update",function(self)
                 end
         end
 end)
+
