@@ -30,7 +30,7 @@ local function MyConfigRaidProfile()
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "autoActivatePvE", true)
 
     --团队框体位置
-    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 400, "BOTTOM", 200, "LEFT", 850)
+    SetRaidProfileSavedPosition(GetActiveRaidProfile(), false, "TOP", 400, "BOTTOM", 200, "LEFT", 750)
 	
     --团队框体大小
     SetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, "frameWidth", 155)
@@ -214,16 +214,18 @@ if frame.unit:lower():match("nameplate") then
         frame.healthBar.glowboarder:SetTexture("Interface\\AddOns\\RSPlates\\media\\bar_solid")
         frame.healthBar.glowboarder:SetPoint("TOPLEFT", frame.healthBar, "TOPLEFT", -3, 3)
         frame.healthBar.glowboarder:SetPoint("BOTTOMRIGHT", frame.healthBar, "BOTTOMRIGHT", 3, -3)
-        -- frame.healthBar.glowboarder:SetVertexColor(1, .95, .25, 1)
+        --frame.healthBar.glowboarder:SetVertexColor(1, .95, .25, 1)
         frame.healthBar.glowboarder:SetVertexColor(0, 0, 0, 1)
         frame.healthBar.glowboarder:Hide()
     end
     if UnitIsUnit(frame.displayedUnit, "target") and not UnitIsFriend("player", "target") then
         frame.healthBar.glow:Show()
         frame.healthBar.glowboarder:Show()
+        frame.healthBar:SetAlpha(1)
     else
         frame.healthBar.glow:Hide()
         frame.healthBar.glowboarder:Hide()
+        -- frame.healthBar:SetAlpha(0.6)
     end
 end
 end)
