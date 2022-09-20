@@ -53,7 +53,7 @@ f:SetScript("OnEvent",function(self,login,reload)
 	
     -- 目标
     TargetFrame:ClearAllPoints()
-    TargetFrame:SetPoint("CENTER", UIParent, "CENTER", 200, -150)
+    TargetFrame:SetPoint("CENTER", UIParent, "CENTER", 250, -150)
     TargetFrame:SetScale(1.0)
     TargetFrame:SetUserPlaced(true)
 
@@ -306,4 +306,3 @@ hooksecurefunc("UnitFramePortrait_Update",function(self)
                 end
         end
 end)
-
