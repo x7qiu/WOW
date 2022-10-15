@@ -158,8 +158,14 @@ end
 hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
     -- 隐藏友方名字
     if frame.unit:find("nameplate") then
-        if UnitIsFriend("player", frame.unit) or (UnitPlayerControlled(frame.unit) and not UnitIsPlayer(frame.unit)) then
-        --if UnitIsFriend("player", frame.unit) then
+        local guid = UnitGUID(frame.unit)
+        local _, _, _, _, _, id = strsplit("-", guid or "")
+        
+        if ((id == "61029") or (id == "17252")) then 
+            frame.name:Show()
+        elseif UnitIsFriend("player", frame.unit) then  -- 隐藏友方名字
+            frame.name:Hide()
+        elseif (UnitPlayerControlled(frame.unit) and not UnitIsPlayer(frame.unit)) then      -- 隐藏其他宠物名字
             frame.name:Hide()
         else
             frame.name:Show()
@@ -180,7 +186,7 @@ hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
     
 end)
 
--- 竞技场隐藏队友名字
+-- 团队框体场内隐藏队友名字
 hooksecurefunc("CompactUnitFrame_UpdateName",function()
     local name
     for i = 1,3 do
@@ -256,6 +262,8 @@ for i, namePlate in ipairs(C_NamePlate.GetNamePlates()) do
             unitFrame.healthBar:Hide()
         elseif ((id == "134389") or (id == "134390") or (id == "174773")or ((id == "170483")) and targetingPlayer) then
             unitFrame.healthBar:SetStatusBarColor(0.3, 0, 0.6, 1) 	-- 怨毒
+        elseif ((id == "61029") or (id == "17252")) then 
+            unitFrame.healthBar:SetStatusBarColor(1,.4,1)       -- 火元素 恶魔术bb 粉色
         elseif reaction == 4 then
             unitFrame.healthBar:SetStatusBarColor(1, 1, 0, 1) 	-- 中立怪 黄色
         elseif reaction >= 5 then
@@ -291,6 +299,7 @@ hide = {
     [5394] = true, 		-- 治疗之泉 测试
 }
 
+--图标显示职业
 hooksecurefunc("UnitFramePortrait_Update",function(self)
         if self.portrait then
                 if UnitIsPlayer(self.unit) then
