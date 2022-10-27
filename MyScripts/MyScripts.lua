@@ -203,35 +203,24 @@ end)
 -- hooksecurefunc("TargetFrame_UpdateBuffAnchor", function(_, name, i) _G[name..i]:SetSize(22, 22) end);
 
 
--- 感谢RSplate作者
+--血条右侧显示箭头
 hooksecurefunc("CompactUnitFrame_UpdateSelectionHighlight", function(frame)
 if frame:IsForbidden() then return end
 if frame.unit:lower():match("nameplate") then
-    if not frame.healthBar.glow then
-        frame.healthBar.glow =  frame.healthBar:CreateTexture("mouseoverhighlight", "BACKGROUND", nil, -3)
-        frame.healthBar.glow:SetTexture("Interface\\AddOns\\RSPlates\\media\\spark-flat")
-        frame.healthBar.glow:SetPoint("TOPLEFT", frame.healthBar, "TOPLEFT", -25, 15)
-        frame.healthBar.glow:SetPoint("BOTTOMRIGHT", frame.healthBar, "BOTTOMRIGHT", 25, -15)
-        frame.healthBar.glow:SetVertexColor(1, .95, .25, 1)
-        frame.healthBar.glow:Hide()
-    end 
-    if not frame.healthBar.glowboarder then   
-        frame.healthBar.glowboarder =  frame.healthBar:CreateTexture("MGlowBorder", "BACKGROUND", nil, -2)
-        frame.healthBar.glowboarder:SetTexture("Interface\\AddOns\\RSPlates\\media\\bar_solid")
-        frame.healthBar.glowboarder:SetPoint("TOPLEFT", frame.healthBar, "TOPLEFT", -3, 3)
-        frame.healthBar.glowboarder:SetPoint("BOTTOMRIGHT", frame.healthBar, "BOTTOMRIGHT", 3, -3)
-        --frame.healthBar.glowboarder:SetVertexColor(1, .95, .25, 1)
-        frame.healthBar.glowboarder:SetVertexColor(0, 0, 0, 1)
-        frame.healthBar.glowboarder:Hide()
+    if not frame.arrow then
+	    frame.arrow = frame.healthBar:CreateTexture(nil, "PARENT")
+	    frame.arrow:SetTexture("Interface\\Addons\\MyScripts\\leftarrow.tga")		-- 图标路径
+	    frame.arrow:SetPoint("left", frame.healthBar, "left", -25, 0)			    -- 左方箭头位置
+	    frame.arrow:SetSize(25, 30)							                        -- 箭头大小
+	    frame.arrow:Hide()
     end
-    if UnitIsUnit(frame.displayedUnit, "target") and not UnitIsFriend("player", "target") then
-        frame.healthBar.glow:Show()
-        frame.healthBar.glowboarder:Show()
-        frame.healthBar:SetAlpha(1)
+    if UnitIsUnit(frame.displayedUnit, "target") then
+        frame.arrow:Show()
     else
-        frame.healthBar.glow:Hide()
-        frame.healthBar.glowboarder:Hide()
-        -- frame.healthBar:SetAlpha(0.6)
+	    frame.arrow:Hide()
+    end
+    if (UnitIsUnit("player", frame.unit) or UnitIsFriend("player", "target")) and frame.arrow then
+	    frame.arrow:Hide()
     end
 end
 end)
@@ -315,3 +304,4 @@ hooksecurefunc("UnitFramePortrait_Update",function(self)
                 end
         end
 end)
+
